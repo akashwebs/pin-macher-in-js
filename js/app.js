@@ -26,3 +26,20 @@ document.getElementById('key-pad').addEventListener('click', function(e) {
         calcNumbers.value += key;
     }
 })
+
+// verify pin
+function verifyPin() {
+    const pinNumber = document.getElementById('pin-numbers').value;
+    const typedNumber = document.getElementById('calc-input').value;
+    if (pinNumber == typedNumber && pinNumber.length > 0) {
+        document.getElementById('notify-success').style.display = "block"
+        document.getElementById('notify-error').style.display = "none"
+        alert('success fully pin matched');
+    } else {
+        document.getElementById('notify-error').style.display = "block"
+
+        document.getElementById('notify-success').style.display = "none"
+        alert('oopss!! pin didn"t match, please try again')
+
+    }
+}
